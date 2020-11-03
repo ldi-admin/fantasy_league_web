@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Home/home.dart';
+import 'MatchUp/Matchup.dart';
+import 'Team/team.dart';
 
 
 
@@ -15,8 +17,8 @@ class _bottomnavbarState extends State<bottomnavbar> {
   int _currentIndex=0;
   final tabs=[
     home(),
-    Text("A"),
-    Text("A"),
+    team(),
+    matchUp(),
     Text("A"),
     Text("A"),
   ];

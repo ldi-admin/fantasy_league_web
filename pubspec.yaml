@@ -45,9 +45,61 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - Assests/Images/team1.png
+    - Assests/Images/team2.png
+    - Assests/Images/team3.png
+    - Assests/Images/team4.png
+    - Assests/Images/small highlight1.png
+    - Assests/Images/small highlight2.png
+    - Assests/Images/small highlight3.png
+    - Assests/Images/small highlight4.png
+    - Assests/Images/small highlight5.png
+    - Assests/Images/small highlight6.png
+    - Assests/Images/2small highlight1.png
+    - Assests/Images/2small highlight2.png
+    - Assests/Images/2small highlight3.png
+    - Assests/Images/Highlight.png
+    - Assests/Images/article.png
+    - Assests/Images/team header.png
+    - Assests/Images/bt_secondary.png
+    - Assests/Images/LA logo.png
+    - Assests/Images/profile1.png
+    - Assests/Images/profile2.png
+    - Assests/Images/profile3.png
+    - Assests/Images/profile4.png
+    - Assests/Images/profile5.png
+    - Assests/Images/profile6.png
+    - Assests/Images/profile7.png
+    - Assests/Images/profile8.png
+    - Assests/Images/Repeat Grid 16.png
+    - Assests/Images/Line1.png
+    - Assests/Images/Line2.png
+    - Assests/Images/Line3.png
+    - Assests/Images/Line4.png
+    - Assests/Images/Line5.png
+    - Assests/Images/Line6.png
+    - Assests/Images/Line7.png
+    - Assests/Images/Field.png
+    - Assests/Images/player field.png
+    - Assests/Images/matchup header.png
+    - Assests/Images/image1.png
+    - Assests/Images/image2.png
+    - Assests/Images/negative arrow.png
+    - Assests/Images/positive arrow.png
+    - Assests/Images/line.png
+    - Assests/Images/statchart1.png
+    - Assests/Images/statchart2.png
+    - Assests/Images/graph compare.png
+    - Assests/Images/playertop.png
+    - Assests/Images/playerHighlight2.png
+    - Assests/Images/playerHighlight1.png
+    - Assests/Images/stats proj.png
+    - Assests/Images/logo1.png
+    - Assests/Images/logo2.png
+    - Assests/Images/logo3.png
+    - Assests/Images/logo4.png
+    - Assests/Images/team header large.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

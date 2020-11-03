@@ -18,6 +18,7 @@ class _homeState extends State<home> {
         child:Scaffold(
 
           appBar: AppBar(
+
             automaticallyImplyLeading: false,
               backgroundColor: Colors.black,
               toolbarHeight: 200,
@@ -34,14 +35,16 @@ class _homeState extends State<home> {
               ),
 
             bottom: TabBar(
+
                 indicatorColor: Colors.white,
               unselectedLabelColor: Colors.redAccent,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicatorWeight: 2,
+
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 4,
              labelColor: Colors.white,
               tabs: [
-              Tab(child: Text("NEWS FEED"),),
-              Tab(child: Text("STANDINGS"),)
+              Tab(child: Container(width: 170,child: Center(child: Text("NEWS FEED"))),),
+              Tab(child: Container(width: 170,child: Center(child: Text("STANDINGS"))),)
             ],
             ),
           ),

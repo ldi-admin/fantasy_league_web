@@ -30,7 +30,7 @@ class _NewsFeedState extends State<NewsFeed> {
             },
               itemCount: second.length,shrinkWrap: true,scrollDirection: Axis.horizontal,),
             ),
-            Image(image: AssetImage("Assests/Images/article.png"),height: 550,fit: BoxFit.cover,width: 350),
+            Image(image: AssetImage("Assests/Images/article.png"),fit: BoxFit.cover,),
             Container(
               padding: EdgeInsets.symmetric(vertical: 20),
               height: 400,child: ListView.builder(itemBuilder:(context,index){
@@ -69,11 +69,11 @@ class Highlights extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-      height: 350,
-      width: 300,
+      height: 400,
+      width: 350,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(this.image),fit: BoxFit.fitHeight
+          image: AssetImage(this.image),fit: BoxFit.contain
         )
       ),
 
