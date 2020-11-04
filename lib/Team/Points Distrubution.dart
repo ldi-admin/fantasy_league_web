@@ -18,27 +18,30 @@ class _PointsDistributionState extends State<PointsDistribution> {
         backgroundColor: Colors.black,
         title: Container(
           height: 80,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image(image: AssetImage("Assests/Images/LA logo.png"),height: 60,width: 60,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:10),
-                    child: RichText(textAlign: TextAlign.start,
-                      text: TextSpan(text: "  Montreal",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300,color: Colors.white,),children: <TextSpan>[
-                        TextSpan(text: "\n  ARTISANS",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white,),)
-                      ]),
+          margin: EdgeInsets.only(top: 15),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image(image: AssetImage("Assests/Images/LA logo.png"),height: 60,width: 60,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:10),
+                      child: RichText(textAlign: TextAlign.start,
+                        text: TextSpan(text: "  Montreal",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300,color: Colors.white,),children: <TextSpan>[
+                          TextSpan(text: "\n  ARTISANS",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white,),)
+                        ]),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              IconButton(icon: Icon(Icons.close),color: Colors.white, onPressed: (){
-                Navigator.pop(context,this);
-              })
-            ],
+                  ],
+                ),
+                IconButton(icon: Icon(Icons.close),color: Colors.white, onPressed: (){
+                  Navigator.pop(context,this);
+                })
+              ],
+            ),
           ),
         ),
       ),
@@ -54,7 +57,7 @@ class _PointsDistributionState extends State<PointsDistribution> {
                 child: Text("TEAM POINTS DISTRIBUTION",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white,letterSpacing: 2)),
               ),
               Padding(padding: const EdgeInsets.only(top:20,left: 40),
-              child: Image(image: AssetImage("Assests/Images/Repeat Grid 16.png"),),)
+              child: Image(image: AssetImage("Assests/Images/Repeat Grid 17.png"),),)
               ,Container(
                 child: ListView.builder(itemBuilder: (context,index){return PlayerStat(
                   Name: detail[index].name,

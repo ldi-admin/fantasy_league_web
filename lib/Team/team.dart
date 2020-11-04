@@ -25,18 +25,18 @@ class _teamState extends State<team> {
 
               indicatorWeight: 5,
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorColor: Color(0xff88B588),
+              indicatorColor: Colors.white,
 
           unselectedLabelColor: Color(0xff88B588),
           tabs: [
-            Tab(child: Container(width: 120,child: Center(child: Text("    LIST    "))),),
-            Tab(child: Container(width: 120,child: Center(child: Text("    FIELD    "))),)
+            Tab(child: Container(width: 150,child: Center(child: Text("LIST")))),
+            Tab(child: Container(width: 150,child: Center(child: Text("    FIELD    "))),)
           ],
             ),
           ),
           body: TabBarView(
             children: [
-             Container(),
+            ListsPlayer(),
               Container()
             ],
           ),

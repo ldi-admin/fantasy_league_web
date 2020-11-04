@@ -21,61 +21,68 @@ class _ListsPlayerState extends State<ListsPlayer> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 27,vertical: 15),
-                        height:50,
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(12),
-                       color: Colors.white,
-                     ),
-                     alignment: Alignment.center,
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-            style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w400),
-                  itemHeight: 50,
-                value: _value,
-                items: [
-                  DropdownMenuItem(
-                    child: Text("STATS TODAY",textAlign: TextAlign.end),
-                    value: 1,
-                  ),
-                  DropdownMenuItem(
-                      child: Text("STATS THIS WEEK"),
-                      value: 2
-                  ),
-                  DropdownMenuItem(
-                    child: Text("STATS THIS MONTH"),
-                    value: 3,
-                  ),
-                  DropdownMenuItem(
-                      child: Text("STATS THIS YEAR"),
-                      value: 4
-                  ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 370,
+                  margin: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            height:50,
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(10),
+                           color: Colors.white,
+                         ),
+                         alignment: Alignment.center,
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w400),
+                      itemHeight: 50,
+                    value: _value,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("STATS TODAY",textAlign: TextAlign.end),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                          child: Text("STATS THIS WEEK"),
+                          value: 2
+                      ),
+                      DropdownMenuItem(
+                        child: Text("STATS THIS MONTH"),
+                        value: 3,
+                      ),
+                      DropdownMenuItem(
+                          child: Text("STATS THIS YEAR"),
+                          value: 4
+                      ),
 
-                ],
-                isExpanded: true,
-                isDense: true,
-                onChanged: (value) {
-                  setState(() {
-                    _value = value;
-                  });
-                }),
-              ),padding: EdgeInsets.symmetric(horizontal: 20),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image:AssetImage("Assests/Images/bt_secondary.png",),fit: BoxFit.cover,)
-              ),
-              width: 350,
-              height: 50,
-              margin: EdgeInsets.symmetric(horizontal: 27),
-              child: FlatButton(
+                    ],
+                    isExpanded: true,
+                    isDense: true,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    }),
+                  ),padding: EdgeInsets.symmetric(horizontal: 10),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image:AssetImage("Assests/Images/bt_secondary.png",),fit: BoxFit.contain,)
+                  ),
+                  width:370,
+                  height: 50,
+                  margin: EdgeInsets.symmetric(horizontal: 27),
+                  child: FlatButton(
 
-                onPressed: (){
-                  Navigator.push(context, ScaleRoute(page: PointsDistribution()));
-                },
-              ),
+                    onPressed: (){
+                      Navigator.push(context, ScaleRoute(page: PointsDistribution()));
+                    },
+                  ),
+                ),
+              ],
             ),
+
             Padding(
               padding: const EdgeInsets.only(left: 30,top: 15,bottom: 20),
               child: Text("FORWARDS"),
@@ -154,40 +161,39 @@ class PlayerCard extends StatelessWidget {
       },
       child: Container(
           color: Colors.white,
-        height:90,
+        height:100,
         margin: EdgeInsets.only(top:10,),
+        padding: EdgeInsets.symmetric(horizontal: 15),
 
         child: Row(
-mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left:5),
-              child: Image(image: AssetImage(this.Photo),width: 50,height: 50,fit: BoxFit.cover,),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-
-                 Text(this.Name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-                 RichText(textAlign: TextAlign.start,
-                   text: TextSpan(text: "1st ",style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
-                     TextSpan(text: " 14.33 ",style: TextStyle(fontSize: 14,color: Colors.black,),),
-                     TextSpan(text: " MTL vs LA",style: TextStyle(fontSize: 14,color: Colors.black54,),),
-                     TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
-                   ]),
-                 ),
-               ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left:2),
+                  child: Image(image: AssetImage(this.Photo),width: 50,height: 50,fit: BoxFit.cover,),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:10.0),
+                  child: RichText(textAlign: TextAlign.start,
+                    text: TextSpan(text: this.Name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.black),children: <TextSpan>[
+                      TextSpan(text: "\n1st ",style: TextStyle(fontSize: 14,color: Colors.black,),),
+                      TextSpan(text: " 14.33 ",style: TextStyle(fontSize: 14,color: Colors.black,),),
+                      TextSpan(text: " MTL vs LA",style: TextStyle(fontSize: 14,color: Colors.black54,),),
+                      TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
+                    ]),
+                  ),
+                ),
+              ],
             ),
             Container(
               margin: EdgeInsets.only(left: 69),
               height: 60,
               width: 60,
-              alignment: Alignment.centerLeft,
+
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(0),
                 color: Colors.black,
