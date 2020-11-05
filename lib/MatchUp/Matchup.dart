@@ -16,18 +16,10 @@ class _matchUpState extends State<matchUp> {
     return  Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
         toolbarHeight: 240,
         centerTitle: true,
-        title: Container(
-          height: 200,
-          width: 350,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("Assests/Images/matchup header.png"),fit: BoxFit.fitWidth
-            )
-          ),
-        ),
+        title:Image(image:  AssetImage("Assests/Images/matchup header large.png"),fit: BoxFit.cover,)
       ),
       backgroundColor: Color(0xffE7E2E1),
       body: SingleChildScrollView(
@@ -38,6 +30,7 @@ class _matchUpState extends State<matchUp> {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 15),
                 child: ListView.builder(itemBuilder: (context,index){return MatchUpCard(
+                  image: MatchUpList[index].image,
                   name: MatchUpList[index].name,
                   gamestatus: MatchUpList[index].gamestatus,
                   score: MatchUpList[index].score,
@@ -69,12 +62,12 @@ class _matchUpState extends State<matchUp> {
   }
 }
 class MatchUpCard extends StatelessWidget {
-  final name,gamestatus, score, centerLetter, name2,gamestatus2, score2;
-  MatchUpCard({this.name,this.gamestatus,this.score,this.name2,this.gamestatus2,this.score2,this.centerLetter});
+  final image,name,gamestatus, score, centerLetter, name2,gamestatus2, score2;
+  MatchUpCard({this.image,this.name,this.gamestatus,this.score,this.name2,this.gamestatus2,this.score2,this.centerLetter});
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 100,
       color: Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 15),
       margin: EdgeInsets.symmetric(vertical: 5),
@@ -82,66 +75,84 @@ class MatchUpCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            width: 110,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(this.name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-                RichText(textAlign: TextAlign.start,
-                  text: TextSpan(text: this.gamestatus,style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
-                    TextSpan(text: " M-L",style: TextStyle(fontSize: 14,color: Colors.black54,),),
-                    TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
-                  ]),
+          Row(
+            children: [
+              Image(image: AssetImage(this.image),width: 60,height: 60,),
+              Container(
+                padding: EdgeInsets.only(left: 10),
+                width: 140,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    Text(this.name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    RichText(textAlign: TextAlign.start,
+                      text: TextSpan(text: this.gamestatus,style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
+                        TextSpan(text: " M-L",style: TextStyle(fontSize: 14,color: Colors.black54,),),
+                        TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
+                      ]),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 35,
-                  width: 35,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),
-                  child: Center(child: Text(this.score,style: TextStyle(color: Colors.white,fontSize: 15),)),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
-          Container(
-            height:120,
-            color: Colors.black26,
-            width: 20,
-            child: Center(child: Text(this.centerLetter,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),),
-          ),
-          Container(
-            width: 110,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
 
-              children: [
-                Text(this.name2,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-                RichText(textAlign: TextAlign.start,
-                  text: TextSpan(text: this.gamestatus2,style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
-                    TextSpan(text: " M-L",style: TextStyle(fontSize: 14,color: Colors.black54,),),
-                    TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
-                  ]),
+          Row(
+            children: [
+              Container(
+                height: 100,
+                width: 90,
+              decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(0),
+              color: Colors.black,
+              ),
+              child: Center(child: Text(this.score,style: TextStyle(color: Colors.white,fontSize: 15),)),
+              ),
+              Container(
+                height:100,
+                color: Colors.black54,
+                width: 25,
+                child: Center(child: Text(this.centerLetter,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),),
+              ),
+              Container(
+                height: 100,
+                width: 90,
+
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(0),
+                  color: Colors.black,
                 ),
-                Container(
-                  height: 35,
-                  width: 35,
 
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),
+                child: Center(child: Text(this.score2,style: TextStyle(color: Colors.white,fontSize: 15),)),
+              ),
+            ],
+          ),
+          Row(
+            children: [
 
-                  child: Center(child: Text(this.score2,style: TextStyle(color: Colors.white,fontSize: 15),)),
-                )
-              ],
+              Container(
+                width: 140,
+                padding: EdgeInsets.only(right: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
 
+                  children: [
 
-            ),
+                    Text(this.name2,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    RichText(textAlign: TextAlign.start,
+                      text: TextSpan(text: this.gamestatus2,style: TextStyle(fontSize: 14,color: Colors.black,),children: <TextSpan>[
+                        TextSpan(text: " M-L",style: TextStyle(fontSize: 14,color: Colors.black54,),),
+                        TextSpan(text: "\n1G, 2A, 3 SOG",style: TextStyle(fontSize: 14,color: Colors.black54,),)
+                      ]),
+                    ),
+                  ],
+                ),
+              ),
+              Image(image: AssetImage(this.image),width: 60,height: 60,),
+            ],
           )
         ],
       ),

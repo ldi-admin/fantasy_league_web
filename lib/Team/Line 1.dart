@@ -53,7 +53,7 @@ class _Line1State extends State<Line1> {
               return Finaltile();
             },itemCount: 3,scrollDirection: Axis.horizontal,shrinkWrap: true,),
           ),
-          Container(height: 40,width: 500,color: Colors.black,child: FlatButton(splashColor: Colors.grey,onPressed: (){}, child: Text("BENCH",style: TextStyle(color: Colors.white),)))
+          Container(height: 60,width:2800,color: Colors.black,child: FlatButton(splashColor: Colors.grey,onPressed: (){}, child: Text("BENCH",style: TextStyle(color: Colors.white),)))
         ],
        ),
      )
@@ -67,9 +67,9 @@ class PlayerImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      width: 100,
-      padding: EdgeInsets.only(left: 10),
+      height: 90,
+      width: 120,
+      padding: EdgeInsets.only(left: 15),
      child: Column(
        crossAxisAlignment: CrossAxisAlignment.center,
        mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,9 +89,9 @@ class Finaltile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      width: 100,
-      padding: EdgeInsets.only(left: 10),
+      height: 90,
+      width: 120,
+      padding: EdgeInsets.only(left: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
