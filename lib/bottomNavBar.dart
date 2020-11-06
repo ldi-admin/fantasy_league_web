@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'Home/home.dart';
 import 'MatchUp/Matchup.dart';
+import 'Players/player.dart';
 import 'Team/team.dart';
 
 
@@ -19,7 +20,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
     home(),
     team(),
     matchUp(),
-    Text("A"),
+   player(),
     Text("A"),
   ];
   @override
