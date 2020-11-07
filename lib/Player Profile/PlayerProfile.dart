@@ -28,7 +28,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
                 height: 480,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('Assests/Images/playertop.png'),fit: BoxFit.cover
+                        image: AssetImage('Assests/Images/playertop.png'),fit: BoxFit.contain
                     )
                 ),
                 child: Align(
@@ -46,7 +46,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
                     Container(
                       child: FlatButton(
                         onPressed: (){
-                //          Navigator.push(context, ScaleRoute(page: PlayerCompare()));
+                          Navigator.push(context, ScaleRoute(page: PlayerCompare()));
                         },
                         child:Container(
                           height: 50,
@@ -138,7 +138,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
               Container(
                 color: Colors.black,
                 height: 50,
-                width: 600,
+                width: 1800,
                 child: FlatButton(
                   onPressed: () {
                     ///First Bottom Sheet
@@ -167,7 +167,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
                 color: Colors.black,
                 margin: EdgeInsets.only(top: 1),
                 height: 50,
-                width: 600,
+               width: 1800,
                 child: FlatButton(
                   onPressed: (){
                     ///Second Bottom Sheet
